@@ -3,8 +3,8 @@
 slurm=1 # whether to use SLURM to parallelize jobs
 
 #---------------Setup datasets for familiarization experiments----------------
-python scripts/setup/setup_dataset.py --data-loc $data_loc --dataset lfw --id-thresh 18 --n-val 10
-python scripts/setup/setup_dataset_bootstrap.py --data-loc $data_loc
+python scripts/setup_dataset.py --data-loc $data_loc --dataset lfw --id-thresh 18 --n-val 10
+python scripts/setup_dataset_bootstrap.py --data-loc $data_loc
 
 # initialize an array of commands to execute with SLURM or locally (will take VERY long locally, as it will be run in serial)
 declare -a cmds=()

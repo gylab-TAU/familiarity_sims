@@ -66,7 +66,7 @@ if __name__ == "__main__":
     parser.add_argument('--n-val', type=int, default=10)
     parser.add_argument('--n-test', type=int, default=20)
     parser.add_argument('--n-ids', type=int, default=50)
-    parser.add_argument('--data-loc', default=PRETRAIN_IMSETS_DIR)
+    parser.add_argument('--data-loc', default=PRETRAIN_IMSETS_LOC)
     parser.add_argument('--n-trains', type=int, nargs='*', default=[1,10,25,50,100,200,400])
     args = parser.parse_args()
     opt = args.__dict__
