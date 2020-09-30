@@ -20,7 +20,7 @@ def setup_dataset_bootstrap(dataset, n_trains=[1,10,25,50,100,200,400], n_val=10
     if os.path.exists(new_dir):
         shutil.rmtree(new_dir)
     if 'vggface2' in dataset:
-        with open('vggface2_ids_in_vggface.txt', 'rb') as f:
+        with open(f'{DATA_DIR}/etc/vggface2_ids_in_vggface.txt', 'rb') as f:
             exclude_ids = [str(line) for line in f.readlines()]
     else:
         exclude_ids = []

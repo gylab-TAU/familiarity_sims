@@ -15,7 +15,7 @@ def get_ids(im_dir, dataset='caltechbirds', id_thresh=20, n_val=19, n_test=0, ma
     new_dir = '{}/imagesets/{}-subset_thresh-{}_val-{}{}'.format(DATA_DIR, dataset.replace('/', '-'), id_thresh, n_val, f'_max-ids-{max_ids}' if max_ids else '')
     setup_dirs = False if os.path.exists(new_dir) else True
     if 'vggface2' in dataset:
-        with open('vggface2_ids_in_vggface.txt', 'rb') as f:
+        with open(f'{DATA_DIR}/etc/vggface2_ids_in_vggface.txt', 'rb') as f:
             exclude_ids = [str(line) for line in f.readlines()]
     else:
         exclude_ids = []
