@@ -6,11 +6,11 @@ import shutil
 from PIL import Image
 import numpy as np
 import sys
-sys.path.append('..')
+sys.path.append('.')
 
 from familiarity.config import DATA_DIR, PRETRAIN_IMSETS_LOC, VGGFACE2_LOC
 
-def get_ids(im_dir, dataset='caltechbirds', id_thresh=20, n_val=19, n_test=0, max_ids=None):
+def get_ids(im_dir, dataset='caltechbirds', id_thresh=20, n_val=19, n_test=0, max_ids=None, data_loc=None, remove_duplicate_birds=True):
     ids = []
     new_dir = '{}/imagesets/{}-subset_thresh-{}_val-{}{}'.format(DATA_DIR, dataset.replace('/', '-'), id_thresh, n_val, f'_max-ids-{max_ids}' if max_ids else '')
     setup_dirs = False if os.path.exists(new_dir) else True

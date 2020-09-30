@@ -68,7 +68,7 @@ def get_vgg16_pretrained_model_info(net_name, fbf=None, return_n_classes=False, 
     else:
         incr_tag = f"_incr_epochs-{fbf['incr_epochs']}_incr-frac-{fbf['incr_frac']}" if not fbf['no_grow_data'] else ''
         base_fn = f"batch_size-256{incr_tag}_lr0-0.01_net-vgg16{'_retrain_old-True' if not fbf['no_grow_data'] else ''}_start_frac-{fbf['start_frac']}"
-        weights_path = f"{data_dir}facebyface/models/{base_fn}.pkl"
+        weights_path = f"{data_dir}/facebyface/models/{base_fn}.pkl"
         return weights_path
 
 def get_cornet_z_pretrained_model_info(net_name, fbf=None, half_filters_at_layer=None, branch_point=None, batch_size=2048, epochs=100, return_n_classes=False):

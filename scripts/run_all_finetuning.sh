@@ -19,7 +19,7 @@ done
 ###-----------------EXP 2: effects of extent of prior face experience on novel familiarization-----------------------------
 declare -a train_fracs=(0.01 0.1 0.5 0.9 1.0)
 for frac in ${train_fracs[@]}; do
-  cmd="python scripts/finetune.py --overwrite --dataset lfw-deepfunneled --id-thresh 18 --n-val 10 --net vgg16 --fbf-start-frac ${start_frac} --fbf-no-grow-data --epochs 50"
+  cmd="python scripts/finetune.py --overwrite --dataset lfw-deepfunneled --id-thresh 18 --n-val 10 --net vgg16 --fbf-start-frac ${frac} --fbf-no-grow-data --epochs 50"
   cmds+=( "$cmd" )
 done
 

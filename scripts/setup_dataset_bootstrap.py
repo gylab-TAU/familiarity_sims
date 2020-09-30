@@ -5,13 +5,13 @@ import shutil
 from PIL import Image
 import numpy as np
 import sys
-sys.path.append('..')
+sys.path.append('.')
 
-from familiarity.config import DATA_DIR, PRETRAIN_IMSETS_DIR
+from familiarity.config import DATA_DIR, PRETRAIN_IMSETS_LOC
 
 
 def setup_dataset_bootstrap(dataset, n_trains=[1,10,25,50,100,200,400], n_val=10, n_test=20, n_ids=50,
-                            data_loc=PRETRAIN_IMSETS_DIR,
+                            data_loc=PRETRAIN_IMSETS_LOC,
                             dataset_fold_name=None):
     if dataset_fold_name is None:
         dataset_fold_name == 'dataset'

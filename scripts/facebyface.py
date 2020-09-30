@@ -139,11 +139,11 @@ def train(model, optimizer, scheduler, dataloaders, dataset_sizes, subset_class_
         epoch += 1
         # save losses and state_dict after every epoch
         if not opt['no_save']:
-            save_checkpoint(model, optimizer, scheduler, losses, base_fn, model_identitier=f'epoch-{epoch}', save_dir=save_dir)
+            save_checkpoint(model, optimizer, scheduler, losses, base_fn, model_identifier=f'epoch-{epoch}', save_dir=save_dir)
 
     # save final converged model
     if not opt['no_save']:
-        save_checkpoint(model, optimizer, scheduler, losses, base_fn, model_identitier=None, save_dir=save_dir)
+        save_checkpoint(model, optimizer, scheduler, losses, base_fn, model_identifier=None, save_dir=save_dir)
 
     return model
 
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     # define the parameters which we do not wish to store in file name
     exclude_keys = ['no_gpu', 'dist_layer_inds', 'dist_layers',
                     'overwrite', 'skip_roc', 'no_save', 'num_workers',
-                    'continue_from_checkpoint', 'data_dir', 'no_grow_data']
+                    'continue_from_checkpoint', 'data_dir', 'no_grow_data', 'save_dir']
 #    for bool_key in ['remove_face_overlap']:
 #        if not opt[bool_key]:
 #            exclude_keys.append(bool_key)
